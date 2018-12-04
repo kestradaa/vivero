@@ -5,7 +5,7 @@
 ## Setup:
 Solo se debe correr estos comandos:
 ```bash
-git clone https://github.com/gmerida/plantilla-laravel.git
+git clone https://github.com/cgmerida/plantilla-rn2018.git
 cd plantilla-laravel 
 composer install                   # Instala las dependencias (librerias) del backend
 sudo chmod 777 storage/ -R         # Permisos de almacenamiento (linux)
