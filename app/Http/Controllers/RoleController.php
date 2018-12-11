@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Role;
+use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Permission;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:users.index')->only('index');
-        $this->middleware('permission:users.create')->only(['create', 'store']);
-        $this->middleware('permission:users.edit')->only(['edit', 'update']);
-        $this->middleware('permission:users.show')->only('show');
-        $this->middleware('permission:users.destroy')->only('destroy'); 
+        $this->middleware('permission:roles.index')->only('index');
+        $this->middleware('permission:roles.create')->only(['create', 'store']);
+        $this->middleware('permission:roles.edit')->only(['edit', 'update']);
+        $this->middleware('permission:roles.show')->only('show');
+        $this->middleware('permission:roles.destroy')->only('destroy'); 
     }
 
     /**
@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        return view('roles.index');
     }
 
     /**
@@ -34,8 +34,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        return view('users.create', compact('roles'));
+        $permissions = Permission::all();
+        return view('roles.create', compact('permissions'));
     }
 
     /**
@@ -46,11 +46,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, User::rules());
+        $role = Role::create($request->all());
 
-        $user = User::create($request->all());
-        
-        $user->roles()->sync($request->roles);
+        $role->permissions()->sync($request->permissions);
 
         return back()->withSuccess(trans('app.success_store'));
     }
@@ -61,10 +59,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Role $role)
     {
-        $roles = Role::all();
-        return view('users.show', compact('user', 'roles'));
+        $permissions = Permission::all();
+        return view('roles.show', compact('role', 'permissions'));
     }
 
     /**
@@ -73,10 +71,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Role $role)
     {
-        $roles = Role::all();
-        return view('users.show', compact('user', 'roles'));
+        $permissions = Permission::all();
+        return view('roles.edit', compact('role', 'permissions'));
     }
 
     /**
@@ -86,15 +84,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Role $role)
     {
-        $this->validate($request, User::rules(true, $user->id));
+        $role->update($request->all());
 
-        $user->update($request->all());
-        
-        $user->roles()->sync($request->roles);
+        $role->permissions()->sync($request->permissions);
 
-        return redirect()->route('users.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route('roles.index')->withSuccess(trans('app.success_update'));
     }
 
     /**
@@ -103,9 +99,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Role $role)
     {
-        $user->delete();
+        $role->delete();
 
         return back()->withSuccess(trans('app.success_destroy'));
     }

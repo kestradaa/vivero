@@ -12,6 +12,21 @@
 			{!! Form::myInput('password', 'password', 'Contraseña') !!}
 	
 			{!! Form::myInput('password', 'password_confirmation', 'Su contraseña de nuevo') !!}
+
+			<hr>
+			
+			<h3>Lista de Roles</h3>
+			<div class="form-group">
+				<ul class="list-unstyled">
+					@foreach ($roles as $role)
+						<li>
+							{!! Form::myCheckbox('roles[]', 'role'.$role->id, $role->name, $role->id, null) !!}
+							<em>({{ $role->description ?? 'Sin descripción' }})</em>
+						</li>
+					@endforeach
+				</ul>
+			</div>
+			
 		</div>  
 	</div>
 </div>

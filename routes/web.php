@@ -23,5 +23,6 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UserController');
+    Route::resource('roles', 'RoleController');
     Route::view('admin', 'admin.dashboard.index')->name('admin.dash');
 });

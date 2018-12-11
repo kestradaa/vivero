@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\User;
+use Caffeinated\Shinobi\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
@@ -20,5 +21,14 @@ class UsersTableSeeder extends Seeder
         $user->username = 'test';
         $user->password = '123456';
         $user->save();
+
+        Role::create([
+            'name' => 'Administrador del sistema',
+            'slug' => 'admin',
+            'description' => 'Usuario administrador',
+            'special' => 'all-access'
+        ]);
+
+        $user->roles()->attach(1);
     }
 }

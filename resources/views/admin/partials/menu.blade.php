@@ -7,7 +7,7 @@
     </a>
 </li>
 
-{{-- @can('users.index') --}}
+@can('users.index')
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route('users.index') }}">
         <span class="icon-holder">
@@ -16,4 +16,15 @@
         <span class="title">Usuarios</span>
     </a>
 </li>
-{{-- @endcan --}}
+@endcan
+
+@can('roles.index')
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route('roles.index') }}">
+        <span class="icon-holder">
+            <i class="c-yellow-800 ti-panel"></i>
+        </span>
+        <span class="title">Roles</span>
+    </a>
+</li>
+@endcan
