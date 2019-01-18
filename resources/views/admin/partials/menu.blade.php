@@ -62,9 +62,9 @@
 </li>
 @endcan
 
-@can('roles.index')
+@can('staffs.index')
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route('users.index') }}">
+    <a class='sidebar-link' href="{{ route('staffs.index') }}">
         <span class="icon-holder">
             <i class="c-blue-grey-800 fa fa-users"></i>
         </span>

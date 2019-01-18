@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Plant;
+use App\Staff;
 
-class PlantController extends Controller
+class staffController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:plants.index')->only('index');
-        $this->middleware('permission:plants.create')->only(['create', 'store']);
-        $this->middleware('permission:plants.edit')->only(['edit', 'update']);
-        $this->middleware('permission:plants.show')->only('show');
-        $this->middleware('permission:plants.destroy')->only('destroy');
+        $this->middleware('permission:staffs.index')->only('index');
+        $this->middleware('permission:staffs.create')->only(['create', 'store']);
+        $this->middleware('permission:staffs.edit')->only(['edit', 'update']);
+        $this->middleware('permission:staffs.show')->only('show');
+        $this->middleware('permission:staffs.destroy')->only('destroy');
     }
 
     /**
@@ -23,7 +23,7 @@ class PlantController extends Controller
      */
     public function index()
     {
-        return view('plants.index');
+        return view('staffs.index');
     }
 
     /**
@@ -33,7 +33,7 @@ class PlantController extends Controller
      */
     public function create()
     {
-        return view('plants.create');
+        return view('staffs.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class PlantController extends Controller
      */
     public function store(Request $request)
     {
-        $plant = Plant::create($request->all());
+        $staff = Staff::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));
     }
@@ -55,9 +55,9 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Plant $plant)
+    public function show(Staff $staff)
     {
-        return view('plants.show', compact('plant'));
+        return view('staffs.show', compact('staff'));
     }
 
     /**
@@ -66,9 +66,9 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Plant $plant)
+    public function edit(Staff $staff)
     {
-        return view('plants.edit', compact('plant'));
+        return view('staffs.edit', compact('staff'));
     }
 
     /**
@@ -78,11 +78,11 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Plant $plant)
+    public function update(Request $request, Staff $staff)
     {
-        $plant->update($request->all());
+        $staff->update($request->all());
 
-        return redirect()->route('plants.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route('staffs.index')->withSuccess(trans('app.success_update'));
     }
 
     /**
@@ -91,9 +91,9 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Plant $plant)
+    public function destroy(Staff $staff)
     {
-        $plant->delete();
+        $staff->delete();
 
         return back()->withSuccess(trans('app.success_destroy'));
     }

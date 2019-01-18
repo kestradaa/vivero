@@ -104,5 +104,36 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'plants.destroy',
             'description' => 'Permite eliminar plantas en el sistema'
         ]);
+
+        // PERMISOS DE PERSONAL
+        Permission::create([
+            'name' => 'Listar Personal',
+            'slug' => 'staffs.index',
+            'description' => 'Permite listar todo el personal del sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Crear Personal',
+            'slug' => 'staffs.create',
+            'description' => 'Permite crear personal en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Ver Personal',
+            'slug' => 'staffs.show',
+            'description' => 'Permite ver la información del personal'
+        ]);
+        
+        Permission::create([
+            'name' => 'Editar Personal',
+            'slug' => 'staffs.edit',
+            'description' => 'Permite editar personal en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Eliminar Personal',
+            'slug' => 'staffs.destroy',
+            'description' => 'Permite eliminar personal en el sistema'
+        ]);
     }
 }

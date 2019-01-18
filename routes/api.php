@@ -37,3 +37,10 @@ Route::get('plants', function () {
     ->rawColumns(['actions'])
     ->toJson();
 });
+
+Route::get('staffs', function () {
+    return datatables(App\Staff::latest('updated_at')->get())
+    ->addColumn('actions', 'staffs.partials.actions')
+    ->rawColumns(['actions'])
+    ->toJson();
+});
