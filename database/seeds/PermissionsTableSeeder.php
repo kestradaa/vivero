@@ -73,5 +73,36 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'roles.destroy',
             'description' => 'Permite eliminar roles en el sistema'
         ]);
+
+        // PERMISOS DE PLANTAS
+        Permission::create([
+            'name' => 'Listar Plantas',
+            'slug' => 'plants.index',
+            'description' => 'Permite listar todos los plantas del sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Crear Plantas',
+            'slug' => 'plants.create',
+            'description' => 'Permite crear plantas en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Ver Planta',
+            'slug' => 'plants.show',
+            'description' => 'Permite ver la información de una planta'
+        ]);
+        
+        Permission::create([
+            'name' => 'Editar Planta',
+            'slug' => 'plants.edit',
+            'description' => 'Permite editar plantas en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Eliminar PLanta',
+            'slug' => 'plants.destroy',
+            'description' => 'Permite eliminar plantas en el sistema'
+        ]);
     }
 }
