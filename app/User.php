@@ -84,6 +84,11 @@ class User extends Authenticatable
         return "{$this->name} {$this->lastname}";
     }
 
+    /*
+    |------------------------------------------------------------------------------------
+    | Relationships
+    |------------------------------------------------------------------------------------
+     */
     public function roles()
     {
         return $this->belongsToMany(Role::class)->withTimestamps();
