@@ -44,7 +44,9 @@ class PlantController extends Controller
      */
     public function store(Request $request)
     {
-        $plant = Plant::create($request->all());
+        $this->validate($request, Plant::rules());
+
+        Plant::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));
     }

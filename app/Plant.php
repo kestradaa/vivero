@@ -18,8 +18,8 @@ class Plant extends Model
 
     public static function rules($update = false, $id = null)
     {
-        $commun2 = [
-            'name' => 'required|string|max:255',
+        $commun = [
+            'name' => "required|string|max:255|unique:plants,name,$id",
             'status' => 'required|string|max:255',
             'initial_quantity' => 'required|integer|max:255',
             'actual_quantity' => 'required|integer|max:255',
@@ -27,6 +27,14 @@ class Plant extends Model
             'loss_quantity' => 'required|integer|max:255',
             'goal' => 'required|integer|max:255',
         ];
+
+        if ($update) {
+            return $commun;
+        }
+        
+        return array_merge($commun, [
+            'name' => 'required|string|max:255|unique:plants,name',
+        ]);
 
     }
 }
