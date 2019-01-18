@@ -15,7 +15,7 @@ class CreatePlantsTable extends Migration
     {
         Schema::create('plants', function (Blueprint $table) {
             $table->increments('id')->unique();
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('status');
             $table->integer('initial_quantity');
             $table->integer('actual_quantity');
