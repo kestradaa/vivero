@@ -38,9 +38,9 @@ Route::get('plants', function () {
     ->toJson();
 });
 
-Route::get('staffs', function () {
-    return datatables(App\Staff::latest('updated_at')->get())
-    ->addColumn('actions', 'staffs.partials.actions')
+Route::get('employees', function () {
+    return datatables(App\Employee::latest('updated_at')->get())
+    ->addColumn('actions', 'employees.partials.actions')
     ->rawColumns(['actions'])
     ->toJson();
 });

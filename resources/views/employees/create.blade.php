@@ -6,12 +6,12 @@
 
 @section('content')
 	{!! Form::open([
-			'route' => 'staffs.store',
+			'route' => 'employees.store',
 			'files' => true
 		])
 	!!}
 
-		@include('staffs.partials.form')
+		@include('employees.partials.form')
 
 		<button type="submit" class="btn btn-primary">{{ trans('app.add_button') }}</button>
 		
@@ -20,5 +20,5 @@
 @stop
 
 @section('js')
-	@include('staffs.partials.js')
+	@include('employees.partials.js')
 @endsection

@@ -19,6 +19,6 @@ Broadcast::channel('App.Plant.{id}', function ($plant, $id) {
     return (int) $plant->id === (int) $id;
 });
 
-Broadcast::channel('App.Staff.{id}', function ($staff, $id) {
-    return (int) $staff->id === (int) $id;
+Broadcast::channel('App.employee.{id}', function ($employee, $id) {
+    return (int) $employee->id === (int) $id;
 });

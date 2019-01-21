@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Staff extends Model
+class Employee extends Model
 {
-    protected $table = 'staffs';
+    protected $table = 'Employees';
     
     protected $fillable = [
         'dpi', 'name', 'last_name', 'rol'
@@ -20,8 +20,8 @@ class Staff extends Model
 
     public static function rules($update = false, $id = null)
     {
-        $commun2 = [
-            'dpi' => 'required|integer|max:255',
+        $commun = [
+            'dpi' => 'required|bigInteger',
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'rol' => 'required|string|max:255',

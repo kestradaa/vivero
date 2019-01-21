@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Staff;
+use App\Employee;
 
-class staffController extends Controller
+class EmployeeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:staffs.index')->only('index');
-        $this->middleware('permission:staffs.create')->only(['create', 'store']);
-        $this->middleware('permission:staffs.edit')->only(['edit', 'update']);
-        $this->middleware('permission:staffs.show')->only('show');
-        $this->middleware('permission:staffs.destroy')->only('destroy');
+        $this->middleware('permission:employees.index')->only('index');
+        $this->middleware('permission:employees.create')->only(['create', 'store']);
+        $this->middleware('permission:employees.edit')->only(['edit', 'update']);
+        $this->middleware('permission:employees.show')->only('show');
+        $this->middleware('permission:employees.destroy')->only('destroy');
     }
 
     /**
@@ -23,7 +23,7 @@ class staffController extends Controller
      */
     public function index()
     {
-        return view('staffs.index');
+        return view('employees.index');
     }
 
     /**
@@ -33,7 +33,7 @@ class staffController extends Controller
      */
     public function create()
     {
-        return view('staffs.create');
+        return view('employees.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class staffController extends Controller
      */
     public function store(Request $request)
     {
-        $staff = Staff::create($request->all());
+        $employee = Employee::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));
     }
@@ -55,9 +55,9 @@ class staffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Staff $staff)
+    public function show(Employee $employee)
     {
-        return view('staffs.show', compact('staff'));
+        return view('employees.show', compact('employee'));
     }
 
     /**
@@ -66,9 +66,9 @@ class staffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Staff $staff)
+    public function edit(Employee $employee)
     {
-        return view('staffs.edit', compact('staff'));
+        return view('employees.edit', compact('employee'));
     }
 
     /**
@@ -78,11 +78,11 @@ class staffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Staff $staff)
+    public function update(Request $request, Employee $employee)
     {
-        $staff->update($request->all());
+        $employee->update($request->all());
 
-        return redirect()->route('staffs.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route('employees.index')->withSuccess(trans('app.success_update'));
     }
 
     /**
@@ -91,9 +91,9 @@ class staffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staff $staff)
+    public function destroy(Employee $employee)
     {
-        $staff->delete();
+        $employee->delete();
 
         return back()->withSuccess(trans('app.success_destroy'));
     }

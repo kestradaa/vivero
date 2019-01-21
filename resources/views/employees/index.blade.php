@@ -11,8 +11,8 @@
 @section('content')
 
     <div class="mB-20">
-        @can('staffs.create')
-        <a href="{{ route('staffs.create') }}" class="btn btn-info">
+        @can('employees.create')
+        <a href="{{ route('employees.create') }}" class="btn btn-info">
             {{ trans('app.add_button') }}
         </a>
         @endcan
@@ -49,7 +49,7 @@
 @section('js')
     <script>
         $('#dataTable').DataTable({
-            ajax: '/api/staffs',
+            ajax: '/api/employees',
             columns: [
                 {data: 'dpi'},
                 {data: 'name'},

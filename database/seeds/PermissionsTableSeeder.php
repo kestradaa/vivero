@@ -108,7 +108,7 @@ class PermissionsTableSeeder extends Seeder
         // PERMISOS DE PERSONAL
         Permission::create([
             'name' => 'Listar Personal',
-            'slug' => 'staffs.index',
+            'slug' => 'employees.index',
             'description' => 'Permite listar todo el personal del sistema'
         ]);
         
@@ -120,19 +120,19 @@ class PermissionsTableSeeder extends Seeder
         
         Permission::create([
             'name' => 'Ver Personal',
-            'slug' => 'staffs.show',
+            'slug' => 'employees.show',
             'description' => 'Permite ver la información del personal'
         ]);
         
         Permission::create([
             'name' => 'Editar Personal',
-            'slug' => 'staffs.edit',
+            'slug' => 'employees.edit',
             'description' => 'Permite editar personal en el sistema'
         ]);
         
         Permission::create([
             'name' => 'Eliminar Personal',
-            'slug' => 'staffs.destroy',
+            'slug' => 'employees.destroy',
             'description' => 'Permite eliminar personal en el sistema'
         ]);
     }

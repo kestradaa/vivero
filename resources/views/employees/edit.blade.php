@@ -5,13 +5,13 @@
 @stop
 
 @section('content')
-	{!! Form::model($staff, [
-			'route' => ['staffs.update', $staff],
+	{!! Form::model($employee, [
+			'route' => ['employees.update', $employee],
 			'method' => 'put',
 		])
 	!!}
 
-		@include('staffs.partials.form')
+		@include('employees.partials.form')
 
 		<button type="submit" class="btn btn-primary">{{ trans('app.edit_button') }}</button>
 		
@@ -20,5 +20,5 @@
 @stop
 
 @section('js')
-	@include('staffs.partials.js')
+	@include('employees.partials.js')
 @endsection
