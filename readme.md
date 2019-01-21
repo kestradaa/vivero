@@ -5,8 +5,8 @@
 ## Setup:
 Solo se debe correr estos comandos:
 ```bash
-git clone https://github.com/cgmerida/plantilla-rn2018.git
-cd plantilla-laravel 
+git clone https://github.com/kestradaa/vivero.git
+cd vivero
 composer install                   # Instala las dependencias (librerias) del backend
 sudo chmod 777 storage/ -R         # Permisos de almacenamiento (linux)
 cp .env.example .env               # Crear las variables de entorno
