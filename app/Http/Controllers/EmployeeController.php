@@ -44,6 +44,8 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, Employee::rules());
+
         $employee = Employee::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));

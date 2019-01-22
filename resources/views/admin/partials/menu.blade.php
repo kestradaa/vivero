@@ -73,9 +73,9 @@
 </li>
 @endcan
 
-@can('roles.index')
+@can('bags.index')
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route('users.index') }}">
+    <a class='sidebar-link' href="{{ route('bags.index') }}">
         <span class="icon-holder">
             <i class="c-brown-700 ti-bag"></i>
         </span>

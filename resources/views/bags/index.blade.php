@@ -5,14 +5,14 @@
 @endsection
 
 @section('page-header')
-    Personal <small>{{ trans('app.manage') }}</small>
+    Bolsas <small>{{ trans('app.manage') }}</small>
 @endsection
 
 @section('content')
 
     <div class="mB-20">
-        @can('employees.create')
-        <a href="{{ route('employees.create') }}" class="btn btn-info">
+        @can('bags.create')
+        <a href="{{ route('bags.create') }}" class="btn btn-info">
             {{ trans('app.add_button') }}
         </a>
         @endcan
@@ -22,20 +22,16 @@
         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>DPI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Puesto</th>
+                    <th>Tamaño</th>
+                    <th>Cantidad</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             
             <tfoot>
                 <tr>
-                    <th>DPI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Puesto</th>
+                    <th>Tamaño</th>
+                    <th>Cantidad</th>
                     <th>Acciones</th>
                 </tr>
             </tfoot>
@@ -48,13 +44,11 @@
 @section('js')
     <script>
         $('#dataTable').DataTable({
-            ajax: '/api/employees',
+            ajax: '/api/bags',
             columns: [
-                {data: 'dpi'},
-                {data: 'name'},
-                {data: 'last_name'},
-                {data: 'rol'},
-                {data: 'actions'}
+                {data: 'size'},
+                {data: 'stock'},
+                {data: 'actions'},
             ]
         });
     </script>

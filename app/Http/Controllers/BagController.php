@@ -3,21 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Plant;
+use App\Bag;
 
-class PlantController extends Controller
+class BagController extends Controller
 {
-    $validation = Validator::make( $request->all(), [
-    'dpi'=>'required|max:40',
-    ]);
-
     public function __construct()
     {
-        $this->middleware('permission:plants.index')->only('index');
-        $this->middleware('permission:plants.create')->only(['create', 'store']);
-        $this->middleware('permission:plants.edit')->only(['edit', 'update']);
-        $this->middleware('permission:plants.show')->only('show');
-        $this->middleware('permission:plants.destroy')->only('destroy');
+        $this->middleware('permission:bags.index')->only('index');
+        $this->middleware('permission:bags.create')->only(['create', 'store']);
+        $this->middleware('permission:bags.edit')->only(['edit', 'update']);
+        $this->middleware('permission:bags.show')->only('show');
+        $this->middleware('permission:bags.destroy')->only('destroy');
     }
 
     /**
@@ -27,7 +23,7 @@ class PlantController extends Controller
      */
     public function index()
     {
-        return view('plants.index');
+        return view('bags.index');
     }
 
     /**
@@ -37,7 +33,7 @@ class PlantController extends Controller
      */
     public function create()
     {
-        return view('plants.create');
+        return view('bags.create');
     }
 
     /**
@@ -48,9 +44,9 @@ class PlantController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, Plant::rules());
+        $this->validate($request, Bag::rules());
 
-        Plant::create($request->all());
+        $bag = Bag::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));
     }
@@ -61,9 +57,9 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Plant $plant)
+    public function show(Bag $bag)
     {
-        return view('plants.show', compact('plant'));
+        return view('bags.show', compact('bag'));
     }
 
     /**
@@ -72,9 +68,9 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Plant $plant)
+    public function edit(Bag $bag)
     {
-        return view('plants.edit', compact('plant'));
+        return view('bags.edit', compact('bag'));
     }
 
     /**
@@ -84,11 +80,11 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Plant $plant)
+    public function update(Request $request, Bag $bag)
     {
-        $plant->update($request->all());
+        $bag->update($request->all());
 
-        return redirect()->route('plants.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route('bags.index')->withSuccess(trans('app.success_update'));
     }
 
     /**
@@ -97,9 +93,9 @@ class PlantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Plant $plant)
+    public function destroy(Bag $bag)
     {
-        $plant->delete();
+        $bag->delete();
 
         return back()->withSuccess(trans('app.success_destroy'));
     }

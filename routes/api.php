@@ -44,3 +44,10 @@ Route::get('employees', function () {
     ->rawColumns(['actions'])
     ->toJson();
 });
+
+Route::get('bags', function () {
+    return datatables(App\Bag::latest('updated_at')->get())
+    ->addColumn('actions', 'bags.partials.actions')
+    ->rawColumns(['actions'])
+    ->toJson();
+});
