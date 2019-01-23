@@ -7,10 +7,6 @@ use App\Plant;
 
 class PlantController extends Controller
 {
-    $validation = Validator::make( $request->all(), [
-    'dpi'=>'required|max:40',
-    ]);
-
     public function __construct()
     {
         $this->middleware('permission:plants.index')->only('index');

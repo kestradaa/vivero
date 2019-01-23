@@ -20,12 +20,10 @@ class Plant extends Model
     {
         $commun = [
             'name' => "required|string|max:255|unique:plants,name,$id",
-            'status' => 'required|string|max:255',
-            'initial_quantity' => 'required|integer|max:255',
-            'actual_quantity' => 'required|integer|max:255',
-            'exit_quantity' => 'required|integer|max:255',
-            'loss_quantity' => 'required|integer|max:255',
-            'goal' => 'required|integer|max:255',
+            'initial_quantity' => 'required|integer',
+            'actual_quantity' => 'required|integer',
+            'exit_quantity' => 'required|integer',
+            'goal' => 'required|integer',
         ];
 
         if ($update) {

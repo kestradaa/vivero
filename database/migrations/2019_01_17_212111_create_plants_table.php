@@ -16,11 +16,9 @@ class CreatePlantsTable extends Migration
         Schema::create('plants', function (Blueprint $table) {
             $table->increments('id')->unique();
             $table->string('name')->unique();
-            $table->string('status');
             $table->integer('initial_quantity');
             $table->integer('actual_quantity');
             $table->integer('exit_quantity');
-            $table->integer('loss_quantity');
             $table->integer('goal');
             $table->timestamps();
         });

@@ -21,7 +21,7 @@ class Employee extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'dpi' => 'required|bigInteger',
+            'dpi' => 'required|string',
             'name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'rol' => 'required|string|max:255',
@@ -32,7 +32,7 @@ class Employee extends Model
         }
         
         return array_merge($commun, [
-            'dpi' => 'required|bigInteger|unique:employees,dpi',
+            'dpi' => 'required|string|unique:employees,dpi',
         ]);
     }
 }

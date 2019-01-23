@@ -23,11 +23,9 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Estado</th>
                     <th>Cantidad Inicial</th>
                     <th>Cantidad Actual</th>
                     <th>Cantidad Salida</th>
-                    <th>Cantidad Perdida</th>
                     <th>Meta del Año</th>
                     <th>Acciones</th>
                 </tr>
@@ -36,11 +34,9 @@
             <tfoot>
                 <tr>
                     <th>Nombre</th>
-                    <th>Estado</th>
                     <th>Cantidad Inicial</th>
                     <th>Cantidad Actual</th>
                     <th>Cantidad Salida</th>
-                    <th>Cantidad Perdida</th>
                     <th>Meta del Año</th>
                     <th>Acciones</th>
                 </tr>
@@ -57,11 +53,9 @@
             ajax: '/api/plants',
             columns: [
                 {data: 'name'},
-                {data: 'status'},
                 {data: 'initial_quantity'},
                 {data: 'actual_quantity'},
                 {data: 'exit_quantity'},
-                {data: 'loss_quantity'},
                 {data: 'goal'},
                 {data: 'actions'}
             ]
