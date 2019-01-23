@@ -51,9 +51,9 @@
 </li>
 @endcan
 
-@can('roles.index')
+@can('losses.index')
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route('users.index') }}">
+    <a class='sidebar-link' href="{{ route('losses.index') }}">
         <span class="icon-holder">
             <i class="c-red-700 fa fa-long-arrow-down"></i>
         </span>

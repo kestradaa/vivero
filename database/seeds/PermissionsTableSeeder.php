@@ -114,7 +114,7 @@ class PermissionsTableSeeder extends Seeder
         
         Permission::create([
             'name' => 'Crear Personal',
-            'slug' => 'staffs.create',
+            'slug' => 'employees.create',
             'description' => 'Permite crear personal en el sistema'
         ]);
         
@@ -134,6 +134,37 @@ class PermissionsTableSeeder extends Seeder
             'name' => 'Eliminar Personal',
             'slug' => 'employees.destroy',
             'description' => 'Permite eliminar personal en el sistema'
+        ]);
+
+        // PERMISOS DE BOLSAS
+        Permission::create([
+            'name' => 'Listar bolsas',
+            'slug' => 'bags.index',
+            'description' => 'Permite listar todos las bolsas del sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Crear bolsas',
+            'slug' => 'bags.create',
+            'description' => 'Permite crear bolsas en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Ver bolsas',
+            'slug' => 'bags.show',
+            'description' => 'Permite ver la información de las bolsas'
+        ]);
+        
+        Permission::create([
+            'name' => 'Editar bolsas',
+            'slug' => 'bags.edit',
+            'description' => 'Permite editar bolsas en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Eliminar bolsas',
+            'slug' => 'bags.destroy',
+            'description' => 'Permite eliminar bolsas en el sistema'
         ]);
     }
 }

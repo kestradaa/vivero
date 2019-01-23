@@ -27,5 +27,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('plants', 'PlantController');
     Route::resource('employees', 'EmployeeController');
     Route::resource('bags', 'BagController');
+    Route::resource('losses', 'BagController');
     Route::view('admin', 'admin.dashboard.index')->name('admin.dash');
 });

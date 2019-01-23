@@ -51,3 +51,10 @@ Route::get('bags', function () {
     ->rawColumns(['actions'])
     ->toJson();
 });
+
+Route::get('losses', function () {
+    return datatables(App\Loss::latest('updated_at')->get())
+    ->addColumn('actions', 'losses.partials.actions')
+    ->rawColumns(['actions'])
+    ->toJson();
+});
