@@ -16,7 +16,7 @@ class CreateLossesTable extends Migration
         Schema::create('losses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('plant_id')->unsigned()->index();
-            $table->foreing('plant_id')->references('id')->on('plants')->onDelete('cascade');
+            $table->foreign('plant_id')->references('id')->on('plants')->onDelete('cascade');
             $table->integer('quantity');
             $table->timestamps();
         });

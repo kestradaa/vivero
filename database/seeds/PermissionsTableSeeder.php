@@ -166,5 +166,36 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'bags.destroy',
             'description' => 'Permite eliminar bolsas en el sistema'
         ]);
+
+        // PERMISOS DE PERDIDAS
+        Permission::create([
+            'name' => 'Listar perdidas',
+            'slug' => 'losses.index',
+            'description' => 'Permite listar todos las perdidas del sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Crear perdidas',
+            'slug' => 'losses.create',
+            'description' => 'Permite crear perdidas en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Ver perdidas',
+            'slug' => 'losses.show',
+            'description' => 'Permite ver la información de las perdidas'
+        ]);
+        
+        Permission::create([
+            'name' => 'Editar perdidas',
+            'slug' => 'losses.edit',
+            'description' => 'Permite editar perdidas en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Eliminar perdidas',
+            'slug' => 'losses.destroy',
+            'description' => 'Permite eliminar perdidas en el sistema'
+        ]);
     }
 }
