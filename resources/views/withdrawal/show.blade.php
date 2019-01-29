@@ -1,16 +1,16 @@
 @extends('admin.master')
 
 @section('page-header')
-	Personal <small>ver</small>
+	Perdida <small>ver</small>
 @stop
 
 @section('content')
-	{!! Form::model($employee, [
+	{!! Form::model($whitdrawal, [
             'id' => 'main-form'
 		])
 	!!}
 
-		@include('employees.partials.form')
+		@include('whitdrawals.partials.form')
 		
         @include('admin.partials.back')
         

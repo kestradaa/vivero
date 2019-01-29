@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('page-header')
-	Planta <small>{{ trans('app.update_item') }}</small>
+	Plantas <small>{{ trans('app.update_item') }}</small>
 @stop
 
 @section('content')
@@ -18,7 +18,3 @@
 	{!! Form::close() !!}
 	
 @stop
-
-@section('js')
-	@include('plants.partials.js')
-@endsection

@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('page-header')
-	Planta <small>ver</small>
+	Plantas <small>ver</small>
 @stop
 
 @section('content')
@@ -17,7 +17,3 @@
 	{!! Form::close() !!}
 	
 @stop
-
-@section('js')
-	@include('admin.partials.disable')
-@endsection

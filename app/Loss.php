@@ -23,12 +23,12 @@ class Loss extends Model
             'quantity' => 'required|integer',
         ];
 
-        //if ($update) {
-          //  return $commun;
-        //}
+        if ($update) {
+            return $commun;
+        }
         
-       // return array_merge($commun, [
-         //   'dpi' => 'required|string|unique:employees,dpi',
-        //]);
+        return array_merge($commun, [
+            'plant_id' => 'required|integer',
+        ]);
     }
 }

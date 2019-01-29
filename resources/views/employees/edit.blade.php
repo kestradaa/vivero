@@ -18,7 +18,3 @@
 	{!! Form::close() !!}
 	
 @stop
-
-@section('js')
-	@include('employees.partials.js')
-@endsection

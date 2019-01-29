@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('page-header')
-	Rol <small>{{ trans('app.add_new_item') }}</small>
+	Roles <small>{{ trans('app.add_new_item') }}</small>
 @stop
 
 @section('content')

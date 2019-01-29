@@ -1,17 +1,17 @@
 @extends('admin.master')
 
 @section('page-header')
-	Bolsas <small>{{ trans('app.update_item') }}</small>
+	Retiro <small>{{ trans('app.update_item') }}</small>
 @stop
 
 @section('content')
-	{!! Form::model($bag, [
-			'route' => ['bags.update', $bag],
+	{!! Form::model($whitdrawal, [
+			'route' => ['whitdrawals.update', $whitdrawal],
 			'method' => 'put',
 		])
 	!!}
 
-		@include('bags.partials.form')
+		@include('whitdrawals.partials.form')
 
 		<button type="submit" class="btn btn-primary">{{ trans('app.edit_button') }}</button>
 		

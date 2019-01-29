@@ -1,7 +1,7 @@
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route('admin.dash') }}">
         <span class="icon-holder">
-            <i class="c-blue-500 ti-home"></i>
+            <i class="c-blue-500 fa fa-pie-chart"></i>
         </span>
         <span class="title">Dashboard</span>
     </a>
@@ -29,7 +29,7 @@
 </li>
 @endcan
 
-@can('roles.index')
+@can('plants.index')
 <li class="nav-item">
     <a class='sidebar-link' href="{{ route('plants.index') }}">
         <span class="icon-holder">
@@ -40,13 +40,24 @@
 </li>
 @endcan
 
-@can('roles.index')
+@can('withdrawals.index')
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route('users.index') }}">
+    <a class='sidebar-link' href="{{ route('withdrawals.index') }}">
         <span class="icon-holder">
             <i class="c-cyan-500 fa fa-exchange"></i>
         </span>
         <span class="title">Solicitud de Retiro</span>
+    </a>
+</li>
+@endcan
+
+@can('bags.index')
+<li class="nav-item">
+    <a class='sidebar-link' href="{{ route('bags.index') }}">
+        <span class="icon-holder">
+            <i class="c-lime-700 ti-bar-chart"></i>
+        </span>
+        <span class="title">Procesos</span>
     </a>
 </li>
 @endcan

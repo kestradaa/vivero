@@ -26,3 +26,11 @@ Broadcast::channel('App.Employee.{id}', function ($employee, $id) {
 Broadcast::channel('App.Bag.{id}', function ($bag, $id) {
     return (int) $bag->id === (int) $id;
 });
+
+Broadcast::channel('App.Loss.{id}', function ($loss, $id) {
+    return (int) $loss->id === (int) $id;
+});
+
+Broadcast::channel('App.Withdrawal.{id}', function ($Withdrawal, $id) {
+    return (int) $Withdrawal->id === (int) $id;
+});

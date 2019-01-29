@@ -1,7 +1,7 @@
 @extends('admin.master')
 
 @section('page-header')
-	Rol <small>ver</small>
+	Roles <small>ver</small>
 @stop
 
 @section('content')
