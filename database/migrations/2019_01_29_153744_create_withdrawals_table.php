@@ -15,10 +15,11 @@ class CreateWithdrawalsTable extends Migration
     {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('receipt');
-            $table->timestamps('');
-            $table->timestamps('');
-            $table->timestamps('');
+            $table->integer('receipt');
+            $table->dateTime('withdrawal_date');
+            $table->string('withdrawal_person');
+            $table->text('description');
+            $table->string('lisence_plate');
             $table->timestamps();
         });
     }

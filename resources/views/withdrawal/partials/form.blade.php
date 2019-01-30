@@ -2,9 +2,9 @@
 	<div class="col-sm-8">
 		<div class="bgc-white p-20 bd">
 			
-			{!! Form::myInput('number', 'dpi', 'DPI de Personal') !!}
+			{!! Form::myInput('number', 'receipt', 'NO. de vale') !!}
 
-			{!! Form::myInput('text', 'name', 'Nombres de Personal') !!}
+			{!! Form::datePicker('Fecha que se realiza', 'withdrawal_date') !!}
 
 			{!! Form::myInput('text', 'last_name', 'Apellidos de Personal') !!}
 
