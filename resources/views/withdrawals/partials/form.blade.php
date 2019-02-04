@@ -6,9 +6,11 @@
 
 			{!! Form::datePicker('Fecha que se realiza', 'withdrawal_date') !!}
 
-			{!! Form::myInput('text', 'last_name', 'Apellidos de Personal') !!}
+			{!! Form::myInput('text', 'withdrawal_person', 'Persona que retira') !!}
 
-			{!! Form::myInput('text', 'rol', 'Cargo que Desempeña') !!}
+			{!! Form::myTextArea('description', 'Descripción') !!}
+
+			{!! Form::myInput('text', 'lisence_plate', 'Placa de vehiculo que retira') !!}
 
 		</div>  
 	</div>

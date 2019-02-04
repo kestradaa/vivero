@@ -5,13 +5,13 @@
 @stop
 
 @section('content')
-	{!! Form::model($whitdrawal, [
-			'route' => ['whitdrawals.update', $whitdrawal],
+	{!! Form::model($withdrawal, [
+			'route' => ['withdrawals.update', $withdrawal],
 			'method' => 'put',
 		])
 	!!}
 
-		@include('whitdrawals.partials.form')
+		@include('withdrawals.partials.form')
 
 		<button type="submit" class="btn btn-primary">{{ trans('app.edit_button') }}</button>
 		

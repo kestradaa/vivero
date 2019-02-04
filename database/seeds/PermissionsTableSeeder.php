@@ -197,5 +197,36 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'losses.destroy',
             'description' => 'Permite eliminar perdidas en el sistema'
         ]);
+
+        // PERMISOS DE RETIRO
+        Permission::create([
+            'name' => 'Listar retiro',
+            'slug' => 'withdrawals.index',
+            'description' => 'Permite listar todos los retiros del sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Crear retiros',
+            'slug' => 'withdrawals.create',
+            'description' => 'Permite crear retiros en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Ver retiros',
+            'slug' => 'withdrawals.show',
+            'description' => 'Permite ver la información de las retiros'
+        ]);
+        
+        Permission::create([
+            'name' => 'Editar retiros',
+            'slug' => 'withdrawals.edit',
+            'description' => 'Permite editar retiros en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Eliminar retiros',
+            'slug' => 'withdrawals.destroy',
+            'description' => 'Permite eliminar retiros en el sistema'
+        ]);
     }
 }

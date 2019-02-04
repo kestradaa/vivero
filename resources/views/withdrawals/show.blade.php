@@ -1,16 +1,16 @@
 @extends('admin.master')
 
 @section('page-header')
-	Perdida <small>ver</small>
+	Retiro <small>ver</small>
 @stop
 
 @section('content')
-	{!! Form::model($whitdrawal, [
+	{!! Form::model($withdrawal, [
             'id' => 'main-form'
 		])
 	!!}
 
-		@include('whitdrawals.partials.form')
+		@include('withdrawals.partials.form')
 		
         @include('admin.partials.back')
         

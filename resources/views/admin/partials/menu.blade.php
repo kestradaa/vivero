@@ -40,9 +40,9 @@
 </li>
 @endcan
 
-@can('plants.index')
+@can('withdrawals.index')
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route('plants.index') }}">
+    <a class='sidebar-link' href="{{ route('withdrawals.index') }}">
         <span class="icon-holder">
             <i class="c-cyan-500 fa fa-exchange"></i>
         </span>

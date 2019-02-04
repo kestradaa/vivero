@@ -59,9 +59,9 @@ Route::get('losses', function () {
     ->toJson();
 });
 
-Route::get('Withdrawals', function () {
+Route::get('withdrawals', function () {
     return datatables(App\Withdrawal::latest('updated_at')->get())
-    ->addColumn('actions', 'Withdrawals.partials.actions')
+    ->addColumn('actions', 'withdrawals.partials.actions')
     ->rawColumns(['actions'])
     ->toJson();
 });

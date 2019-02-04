@@ -9,11 +9,11 @@ class WithdrawalController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('permission:whitdrawals.index')->only('index');
-        $this->middleware('permission:whitdrawals.create')->only(['create', 'store']);
-        $this->middleware('permission:whitdrawals.edit')->only(['edit', 'update']);
-        $this->middleware('permission:whitdrawals.show')->only('show');
-        $this->middleware('permission:whitdrawals.destroy')->only('destroy');
+        $this->middleware('permission:withdrawals.index')->only('index');
+        $this->middleware('permission:withdrawals.create')->only(['create', 'store']);
+        $this->middleware('permission:withdrawals.edit')->only(['edit', 'update']);
+        $this->middleware('permission:withdrawals.show')->only('show');
+        $this->middleware('permission:withdrawals.destroy')->only('destroy');
     }
 
     /**
@@ -23,7 +23,7 @@ class WithdrawalController extends Controller
      */
     public function index()
     {
-        return view('whitdrawals.index');
+        return view('withdrawals.index');
     }
 
     /**
@@ -33,7 +33,7 @@ class WithdrawalController extends Controller
      */
     public function create()
     {
-        return view('whitdrawals.create');
+        return view('withdrawals.create');
     }
 
     /**
@@ -44,9 +44,9 @@ class WithdrawalController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, Whitdrawal::rules());
+        $this->validate($request, Withdrawal::rules());
 
-        $whitdrawal = Whitdrawal::create($request->all());
+        $withdrawal = Withdrawal::create($request->all());
 
         return back()->withSuccess(trans('app.success_store'));
     }
@@ -57,9 +57,9 @@ class WithdrawalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Whitdrawal $whitdrawal)
+    public function show(Withdrawal $withdrawal)
     {
-        return view('whitdrawals.show', compact('whitdrawal'));
+        return view('withdrawals.show', compact('withdrawal'));
     }
 
     /**
@@ -68,9 +68,9 @@ class WithdrawalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Whitdrawal $whitdrawal)
+    public function edit(Withdrawal $withdrawal)
     {
-        return view('whitdrawals.edit', compact('whitdrawal'));
+        return view('withdrawals.edit', compact('withdrawal'));
     }
 
     /**
@@ -80,11 +80,11 @@ class WithdrawalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Whitdrawal $whitdrawal)
+    public function update(Request $request, Withdrawal $withdrawal)
     {
-        $whitdrawal->update($request->all());
+        $withdrawal->update($request->all());
 
-        return redirect()->route('whitdrawals.index')->withSuccess(trans('app.success_update'));
+        return redirect()->route('withdrawals.index')->withSuccess(trans('app.success_update'));
     }
 
     /**
@@ -93,9 +93,9 @@ class WithdrawalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Whitdrawal $whitdrawal)
+    public function destroy(Withdrawal $withdrawal)
     {
-        $whitdrawal->delete();
+        $withdrawal->delete();
 
         return back()->withSuccess(trans('app.success_destroy'));
     }

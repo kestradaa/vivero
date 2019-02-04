@@ -11,8 +11,8 @@
 @section('content')
 
     <div class="mB-20">
-        @can('whitdrawals.create')
-        <a href="{{ route('whitdrawals.create') }}" class="btn btn-info">
+        @can('withdrawals.create')
+        <a href="{{ route('withdrawals.create') }}" class="btn btn-info">
             {{ trans('app.add_button') }}
         </a>
         @endcan
@@ -22,20 +22,22 @@
         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>DPI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Puesto</th>
+                    <th>NO. Vale</th>
+                    <th>Fecha</th>
+                    <th>Persona Retira</th>
+                    <th>Retiro</th>
+                    <th>Placa Vehiculo</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             
             <tfoot>
                 <tr>
-                    <th>DPI</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Puesto</th>
+                    <th>NO. Vale</th>
+                    <th>Fecha</th>
+                    <th>Persona Retira</th>
+                    <th>Retiro</th>
+                    <th>Placa Vehiculo</th>
                     <th>Acciones</th>
                 </tr>
             </tfoot>
@@ -48,12 +50,13 @@
 @section('js')
     <script>
         $('#dataTable').DataTable({
-            ajax: '/api/whitdrawals',
+            ajax: '/api/withdrawals',
             columns: [
-                {data: 'dpi'},
-                {data: 'name'},
-                {data: 'last_name'},
-                {data: 'rol'},
+                {data: 'receipt'},
+                {data: 'withdrawal_date'},
+                {data: 'withdrawal_person'},
+                {data: 'description'},
+                {data: 'lisence_plate'},
                 {data: 'actions'}
             ]
         });
