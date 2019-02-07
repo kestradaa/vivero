@@ -9,7 +9,7 @@ class Withdrawal extends Model
     protected $table = 'withdrawals';
 
     protected $fillable = [
-        'receipt', 'withdrawal_date', 'withdrawal_person', 'description', 'lisence_plate'
+        'receipt', 'whithdrawal_date', 'withdrawal_person', 'description', 'lisence_plate'
     ];
 
     protected $dates = [
@@ -33,7 +33,7 @@ class Withdrawal extends Model
         }
         
         return array_merge($commun, [
-            'receipt' => 'required|integer|unique:whitdrawals,receipt',
+            'receipt' => 'required|integer|unique:withdrawals,receipt',
         ]);
     }
 }

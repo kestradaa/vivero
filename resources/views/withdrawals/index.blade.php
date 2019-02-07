@@ -22,10 +22,10 @@
         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th>NO. Vale</th>
+                    <th>No. Vale</th>
                     <th>Fecha</th>
-                    <th>Persona Retira</th>
-                    <th>Retiro</th>
+                    <th>Persona</th>
+                    <th>descripción</th>
                     <th>Placa Vehiculo</th>
                     <th>Acciones</th>
                 </tr>
@@ -33,10 +33,10 @@
             
             <tfoot>
                 <tr>
-                    <th>NO. Vale</th>
+                    <th>No. Vale</th>
                     <th>Fecha</th>
-                    <th>Persona Retira</th>
-                    <th>Retiro</th>
+                    <th>Persona</th>
+                    <th>descripción</th>
                     <th>Placa Vehiculo</th>
                     <th>Acciones</th>
                 </tr>
@@ -57,7 +57,7 @@
                 {data: 'withdrawal_person'},
                 {data: 'description'},
                 {data: 'lisence_plate'},
-                {data: 'actions'}
+                {data: 'actions'},
             ]
         });
     </script>
