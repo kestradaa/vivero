@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Withdrawal;
+use Illuminate\Support\Facades\Storage;
 
 class WithdrawalController extends Controller
 {
@@ -48,6 +49,13 @@ class WithdrawalController extends Controller
 
         $withdrawal = Withdrawal::create($request->all());
 
+        //IMAGE
+
+        if ($request->file('file')) {
+            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $withdrawal->fill(['file' => asset($path)])->save();   
+        } 
+
         return back()->withSuccess(trans('app.success_store'));
     }
 
@@ -83,6 +91,13 @@ class WithdrawalController extends Controller
     public function update(Request $request, Withdrawal $withdrawal)
     {
         $withdrawal->update($request->all());
+
+        //IMAGE
+
+        if ($request->file('file')) {
+            $path = Storage::disk('public')->put('image', $request->file('file'));
+            $withdrawal->fill(['file' => asset($path)])->save();   
+        }
 
         return redirect()->route('withdrawals.index')->withSuccess(trans('app.success_update'));
     }

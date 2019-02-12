@@ -4,7 +4,7 @@
 			
 			{!! Form::myInput('number', 'receipt', 'NO. de vale') !!}
 
-			{!! Form::datePicker('Fecha que se realiza', 'withdrawal_date') !!}
+			{!! Form::datePicker('withdrawal_date', 'Fecha de retiro') !!}
 
 			{!! Form::myInput('text', 'withdrawal_person', 'Persona que retira') !!}
 
@@ -12,6 +12,10 @@
 
 			{!! Form::myInput('text', 'lisence_plate', 'Placa de vehiculo que retira') !!}
 
-		</div>  
+			<div class="form-group">		   
+		    	{!! Form::label('file', 'Imagen') !!}
+		    	{!! Form::file('file') !!}
+		    </div>
+		</div>
 	</div>
 </div>

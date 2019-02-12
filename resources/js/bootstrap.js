@@ -43,4 +43,6 @@ import "./datatable";
 
 import "./sweetalert2";
 
+import "./datetimepicker";
+
 global.$ = global.jQuery = require("jquery");

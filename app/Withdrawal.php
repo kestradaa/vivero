@@ -22,7 +22,7 @@ class Withdrawal extends Model
     {
         $commun = [
             'receipt' => 'required|integer',
-            'withdrawal_date' => 'required|date',
+            'withdrawal_date' => 'string',
             'withdrawal_person' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'lisence_plate' => 'required|string|max:255',

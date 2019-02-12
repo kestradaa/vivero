@@ -8,6 +8,7 @@
 	{!! Form::model($role, [
 			'route' => ['roles.update', $role],
 			'method' => 'put',
+			'files' => true,
 		])
 	!!}
 
@@ -18,6 +19,8 @@
 	{!! Form::close() !!}
 	
 @stop
+
+@section('js')
 
 @section('js')
 	@include('roles.partials.js')

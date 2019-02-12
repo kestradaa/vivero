@@ -16,5 +16,14 @@
 		<button type="submit" class="btn btn-primary">{{ trans('app.add_button') }}</button>
 		
 	{!! Form::close() !!}
-	
+		
+@stop
+
+@section('js')
+
+<script type="text/javascript">
+    $(function () {
+		$('#withdrawal_date').datetimepicker();
+    });
+</script>
 @stop
