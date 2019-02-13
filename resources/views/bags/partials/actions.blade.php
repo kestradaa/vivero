@@ -1,4 +1,14 @@
 
+@can('bags.edit')
+    <li class="list-inline-item">
+        <a href="{{ route('bags.edit', $id) }}" 
+        title="{{ trans('app.edit_title') }}" data-toggle="tooltip"
+        class="btn btn-outline-primary btn-sm">
+            <span class="ti-plus"></span>
+        </a>
+    </li>
+    @endcan
+
 <ul class="list-inline">
     @can('bags.show')
     <li class="list-inline-item">
@@ -9,7 +19,7 @@
     </li>
     @endcan
     
-    @can('bsgs.edit')
+    @can('bags.edit')
     <li class="list-inline-item">
         <a href="{{ route('bags.edit', $id) }}" 
         title="{{ trans('app.edit_title') }}" data-toggle="tooltip"

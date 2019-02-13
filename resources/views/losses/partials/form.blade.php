@@ -4,7 +4,7 @@
 			
 			{!! Form::myInput('text', 'plant_id', 'Nombre de la Planta') !!}
 
-			{!! Form::myInput('number', 'quantity', 'Cantidad Perdida') !!
+			{!! Form::myInput('number', 'quantity', 'Cantidad Perdida') !!}
 							
 		</div>  
 	</div>

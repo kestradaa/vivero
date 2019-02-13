@@ -13,6 +13,7 @@ class Withdrawal extends Model
     ];
 
     protected $dates = [
+        'whithdrawal_date',
         'created_at',
         'updated_at',
         'deleted_at'
@@ -22,7 +23,7 @@ class Withdrawal extends Model
     {
         $commun = [
             'receipt' => 'required|integer',
-            'withdrawal_date' => 'string',
+            'withdrawal_date' => 'required|date',
             'withdrawal_person' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'lisence_plate' => 'required|string|max:255',

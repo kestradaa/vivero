@@ -17,7 +17,7 @@ class CreateWithdrawalsTable extends Migration
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('receipt');
-            $table->dateTime('withdrawal_date');
+            $table->dateTime('withdrawal_date')->nullable();
             $table->string('withdrawal_person');
             $table->text('description');
             $table->string('lisence_plate');

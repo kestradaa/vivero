@@ -9,6 +9,6 @@ export default (function() {
         locale: "es",
         format: "YYYY-MM-DD HH:mm",
         sideBySide: true,
-        useCurrent: false
+       useCurrent: false
     });
 })();

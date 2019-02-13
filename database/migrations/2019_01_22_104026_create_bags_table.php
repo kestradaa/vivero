@@ -14,8 +14,8 @@ class CreateBagsTable extends Migration
     public function up()
     {
         Schema::create('bags', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('size');
+            $table->increments('id')->unique();
+            $table->string('size')->unique();
             $table->integer('stock');
             $table->timestamps();
         });
