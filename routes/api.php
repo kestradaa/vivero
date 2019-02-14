@@ -60,8 +60,15 @@ Route::get('losses', function () {
 });
 
 Route::get('withdrawals', function () {
-    return datatables(App\Loss::latest('updated_at')->get())
+    return datatables(App\Withdrawal::latest('updated_at')->get())
     ->addColumn('actions', 'withdrawals.partials.actions')
+    ->rawColumns(['actions'])
+    ->toJson();
+});
+
+Route::get('processes', function () {
+    return datatables(App\Process::latest('updated_at')->get())
+    ->addColumn('actions', 'processes.partials.actions')
     ->rawColumns(['actions'])
     ->toJson();
 });

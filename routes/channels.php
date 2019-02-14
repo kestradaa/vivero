@@ -34,3 +34,7 @@ Broadcast::channel('App.Loss.{id}', function ($loss, $id) {
 Broadcast::channel('App.Withdrawal.{id}', function ($withdrawal, $id) {
     return (int) $withdrawal->id === (int) $id;
 });
+
+Broadcast::channel('App.Process.{id}', function ($process, $id) {
+    return (int) $process->id === (int) $id;
+});

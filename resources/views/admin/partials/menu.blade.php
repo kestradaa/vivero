@@ -51,9 +51,9 @@
 </li>
 @endcan
 
-@can('bags.index')
+@can('processes.index')
 <li class="nav-item">
-    <a class='sidebar-link' href="{{ route('bags.index') }}">
+    <a class='sidebar-link' href="{{ route('processes.index') }}">
         <span class="icon-holder">
             <i class="c-lime-700 ti-bar-chart"></i>
         </span>

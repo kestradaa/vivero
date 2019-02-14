@@ -1,17 +1,17 @@
 
 <ul class="list-inline">
-    @can('losses.show')
+    @can('processes.show')
     <li class="list-inline-item">
-        <a href="{{ route('losses.show', $id) }}"
+        <a href="{{ route('processes.show', $id) }}"
         title="Ver" class="btn btn-sm btn-outline-secondary">
             <span class="ti-eye"></span>
         </a>
     </li>
     @endcan
     
-    @can('losses.edit')
+    @can('processes.edit')
     <li class="list-inline-item">
-        <a href="{{ route('losses.edit', $id) }}" 
+        <a href="{{ route('processes.edit', $id) }}" 
         title="{{ trans('app.edit_title') }}" data-toggle="tooltip"
         class="btn btn-outline-primary btn-sm">
             <span class="ti-pencil"></span>
@@ -19,11 +19,11 @@
     </li>
     @endcan
     
-    @can('losses.destroy')
+    @can('processes.destroy')
     <li class="list-inline-item">
         {!! Form::open([
             'class'=>'delete',
-            'route'  => ['losses.destroy', $id], 
+            'route'  => ['processes.destroy', $id], 
             'method' => 'DELETE',
             ]) 
         !!}

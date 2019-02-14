@@ -29,5 +29,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('bags', 'BagController');
     Route::resource('losses', 'LossController');
     Route::resource('withdrawals', 'WithdrawalController');
+    Route::resource('processes', 'ProcessController');
     Route::view('admin', 'admin.dashboard.index')->name('admin.dash');
 });
