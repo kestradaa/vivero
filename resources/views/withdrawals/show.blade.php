@@ -11,7 +11,7 @@
 	!!}
 
 		@include('withdrawals.partials.form')
-		
+
         @include('admin.partials.back')
         
 	{!! Form::close() !!}

@@ -18,3 +18,7 @@
 	{!! Form::close() !!}
 	
 @stop
+
+@section('js')
+	@include('withdrawals.partials.js')
+@stop

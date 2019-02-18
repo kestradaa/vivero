@@ -20,10 +20,5 @@
 @stop
 
 @section('js')
-
-<script type="text/javascript">
-    $(function () {
-		$('#withdrawal_date').datetimepicker();
-    });
-</script>
+	@include('withdrawals.partials.js')
 @stop

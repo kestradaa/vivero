@@ -4,7 +4,7 @@
 			
 			{!! Form::myInput('number', 'receipt', 'NO. de vale') !!}
 
-			{!! Form::datePicker('withdrawal_date', 'Fecha de retiro') !!}
+			{!! Form::datePicker('withdrawal_date', 'Fecha de retiro', ['id' => 'whithdrawal_date']) !!}
 
 			{!! Form::myInput('text', 'withdrawal_person', 'Persona que retira') !!}
 
