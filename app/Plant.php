@@ -35,4 +35,14 @@ class Plant extends Model
         ]);
 
     }
+
+    public function loss()
+    {
+        return $this->hasMany(Loss::class);
+    }
+
+    public function process()
+    {
+        return $this->belongsToMany(Process::class);
+    }   
 }

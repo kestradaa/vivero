@@ -228,5 +228,36 @@ class PermissionsTableSeeder extends Seeder
             'slug' => 'withdrawals.destroy',
             'description' => 'Permite eliminar retiros en el sistema'
         ]);
+
+        // PERMISOS DE PROCESOS
+        Permission::create([
+            'name' => 'Listar procesos',
+            'slug' => 'processes.index',
+            'description' => 'Permite listar todos los procesos del sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Crear proceso',
+            'slug' => 'processes.create',
+            'description' => 'Permite crear procesos en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Ver procesos',
+            'slug' => 'processes.show',
+            'description' => 'Permite ver la información de las procesos'
+        ]);
+        
+        Permission::create([
+            'name' => 'Editar procesos',
+            'slug' => 'processes.edit',
+            'description' => 'Permite editar procesos en el sistema'
+        ]);
+        
+        Permission::create([
+            'name' => 'Eliminar procesos',
+            'slug' => 'processes.destroy',
+            'description' => 'Permite eliminar procesos en el sistema'
+        ]);
     }
 }

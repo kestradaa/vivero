@@ -31,4 +31,9 @@ class Loss extends Model
             'plant_id' => 'required|integer',
         ]);
     }
+
+    public function plant()
+    {
+        return $this->belongsTo(Loss::class);
+    }
 }

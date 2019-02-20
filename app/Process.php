@@ -31,4 +31,9 @@ class Process extends Model
             'name' => 'required|string|unique:processes,name',
         ]);
     }
+
+    public function plant()
+    {
+        return $this->belongsToMany(Plant::class);
+    }
 }

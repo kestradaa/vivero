@@ -7,7 +7,7 @@ import "pc-bootstrap4-datetimepicker/src/sass/bootstrap-datetimepicker-build.css
 export default (function() {
     $.extend($.fn.datetimepicker.defaults, {
         locale: "es",
-        format: "YYYY-MM-DD HH:mm",
+        format: "Y-m-d H:i",
         sideBySide: true,
         useCurrent: false
     });
