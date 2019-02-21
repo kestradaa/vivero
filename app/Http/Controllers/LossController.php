@@ -33,6 +33,8 @@ class LossController extends Controller
      */
     public function create()
     {
+        $losses = Loss::pluck('id', 'id_plant')->prepend('Seleccione una planta', "");
+
         return view('losses.create');
     }
 
