@@ -31,6 +31,7 @@
 						<li>
 							{!! Form::myCheckbox('permissions[]', 'permission'.$permission->id, $permission->name, $permission->id, null) !!}
 							<em>({{ $permission->description ?? 'Sin descripción' }})</em>
+							<hr>
 						</li>
 					@endforeach
 				</ul>

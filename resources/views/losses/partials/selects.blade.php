@@ -1,4 +1,4 @@
-<script>
+{{--<script>
     $(function() {
 			$('select[name=plant_id]').change(function() {
 				var url = '/api/losses/' + $(this).val();
@@ -8,7 +8,7 @@
 				});
 			});
 </script>
-
+--}}
 {{--
 <script>
     $(function() {

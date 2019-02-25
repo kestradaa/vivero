@@ -37,3 +37,5 @@ class Loss extends Model
         return $this->belongsTo(Loss::class);
     }
 }
+
+

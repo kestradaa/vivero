@@ -23,6 +23,7 @@ class LossController extends Controller
      */
     public function index()
     {
+        $losses = DB::table('losses')->where('id', '=', 1)->get();
         return view('losses.index');
     }
 
@@ -33,7 +34,7 @@ class LossController extends Controller
      */
     public function create()
     {
-        $losses = Loss::pluck('id', 'id_plant')->prepend('Seleccione una planta', "");
+       // $losses = Loss::pluck('id', 'id_plant')->prepend('Seleccione una planta', "");
 
         return view('losses.create');
     }
