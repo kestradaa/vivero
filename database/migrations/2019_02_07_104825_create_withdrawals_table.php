@@ -21,6 +21,7 @@ class CreateWithdrawalsTable extends Migration
             $table->string('withdrawal_person');
             $table->text('description');
             $table->string('lisence_plate');
+            $table->string('file',128)->nullable();
             $table->timestamps();
         });
     }

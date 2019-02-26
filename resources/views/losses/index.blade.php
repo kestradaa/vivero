@@ -46,7 +46,7 @@
         $('#dataTable').DataTable({
             ajax: '/api/losses',
             columns: [
-                {data: 'plant_id'},
+                {data: 'plants.name'},
                 {data: 'quantity'},
                 {data: 'actions'},
             ]

@@ -13,7 +13,7 @@
 			{!! Form::myInput('text', 'lisence_plate', 'Placa de vehiculo que retira') !!}
 
 			<div class="form-group">		   
-		    	{!! Form::label('file', 'Imagen') !!}
+		    	{!! Form::label('file', 'Fotografia del vale') !!}
 		    	{!! Form::file('file') !!}
 		    </div>
 		</div>
