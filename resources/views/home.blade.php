@@ -15,6 +15,8 @@
                     @endif
 
                     Secion Iniciada!
+                    <hr>
+                    <a class="btn btn-outline-primary btn-sm" href="/admin">IR AL DASHBOARD</a>
                 </div>
             </div>
         </div>

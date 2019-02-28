@@ -34,7 +34,8 @@ class PlantController extends Controller
      */
     public function create()
     {
-        return view('plants.create');
+        $processes = Process::all();
+        return view('plants.create', compact('processes'));
     }
 
     /**
@@ -47,7 +48,9 @@ class PlantController extends Controller
     {
         $this->validate($request, Plant::rules());
 
-        Plant::create($request->all());
+        $plant = Plant::create($request->all());
+
+        $plant->processes()->sync($request->processes);
 
         return back()->withSuccess(trans('app.success_store'));
     }
@@ -60,7 +63,8 @@ class PlantController extends Controller
      */
     public function show(Plant $plant)
     {
-        return view('plants.show', compact('plant'));
+        $processes = Process::all();
+        return view('plants.show', compact('plant', 'processes'));
     }
 
     /**
@@ -71,7 +75,8 @@ class PlantController extends Controller
      */
     public function edit(Plant $plant)
     {
-        return view('plants.edit', compact('plant'));
+        $processes = Process::all();
+        return view('plants.edit', compact('plant', 'processes'));
     }
 
     /**
@@ -83,7 +88,11 @@ class PlantController extends Controller
      */
     public function update(Request $request, Plant $plant)
     {
+        $this->validate($request, Plant::rules(true, $plant->id));
+
         $plant->update($request->all());
+
+        $plant->processes()->sync($request->processes);
 
         return redirect()->route('plants.index')->withSuccess(trans('app.success_update'));
     }

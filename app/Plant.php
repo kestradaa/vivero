@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\loss;
+use App\Process;
 
 class Plant extends Model
 {
@@ -43,6 +45,6 @@ class Plant extends Model
 
     public function process()
     {
-        return $this->belongsToMany(Process::class);
+        return $this->belongsToMany(Process::class)->withTimestamps();;
     }   
 }
