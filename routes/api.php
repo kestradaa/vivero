@@ -53,7 +53,7 @@ Route::get('bags', function () {
 });
 
 Route::get('losses', function () {
-    return datatables(App\Loss::with('plant')->get())
+    return datatables(App\Loss::with('plants')->get())
     ->addColumn('actions', 'losses.partials.actions')
     ->rawColumns(['actions'])
     ->toJson();

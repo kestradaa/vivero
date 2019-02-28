@@ -10,7 +10,16 @@
 			{!! Form::myInput('number', 'exit_quantity', 'Cantidad salida de la Planta') !!}
 
 			{!! Form::myInput('number', 'goal', 'Meta Produccion de Planta') !!}
-			
+
+			<h3>Lista de Procesos</h3>
+			<div class="form-group">
+				<ul class="list-unstyled">
+					@foreach ($processes as $process)
+							{!! Form::myInput('number', 'processes[]',$process->name,['placeholder' => $process->description]) !!}
+							<hr>
+					@endforeach
+				</ul>
+			</div>
 		</div>  
 	</div>
 </div>

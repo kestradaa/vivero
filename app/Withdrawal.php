@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Collective\Html\Eloquent\FormAccessible;
 
 class Withdrawal extends Model
 {
@@ -23,7 +24,7 @@ class Withdrawal extends Model
     {
         $commun = [
             'receipt' => 'required|integer',
-            'withdrawal_date' => 'required|date_format:Y-m-d H:i',
+            'withdrawal_date' => 'required|date_format:Y-M-D H:m',
             'withdrawal_person' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'lisence_plate' => 'required|string|max:255',
@@ -37,4 +38,9 @@ class Withdrawal extends Model
             'receipt' => 'required|integer|unique:withdrawals,receipt',
         ]);
     }
+
+    /*public function formDateAttribute($withdrawal_date)
+    {
+        return Carbon::parse($withdrawal_date)->format('Y-m-d H:i');
+    }*/
 }

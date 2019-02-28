@@ -27,7 +27,6 @@
                     <th>Persona</th>
                     <th>descripción</th>
                     <th>Placa Vehiculo</th>
-                    <th>Foto</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -39,7 +38,6 @@
                     <th>Persona</th>
                     <th>descripción</th>
                     <th>Placa Vehiculo</th>
-                    <th>Foto</th>
                     <th>Acciones</th>
                 </tr>
             </tfoot>
@@ -59,7 +57,6 @@
                 {data: 'withdrawal_person'},
                 {data: 'description'},
                 {data: 'lisence_plate'},
-                {data: 'file'},
                 {data: 'actions'},
             ]
         });

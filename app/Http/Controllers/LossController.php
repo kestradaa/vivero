@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Loss;
+use App\Plant;
 
 class LossController extends Controller
 {
@@ -34,7 +35,7 @@ class LossController extends Controller
     public function create()
     {
        $plants = Plant::pluck('name', 'id')->prepend('Seleccione una planta', "");
-        return view('losses.create');
+        return view('losses.create', compact('plants'));
     }
 
     /**
@@ -61,7 +62,7 @@ class LossController extends Controller
     public function show(Loss $loss)
     {
         $plants = Plant::pluck('name', 'id')->prepend('Seleccione una planta', "");
-        return view('losses.show', compact('loss'));
+        return view('losses.show', compact('loss', 'plants'));
     }
 
     /**
@@ -73,7 +74,7 @@ class LossController extends Controller
     public function edit(Loss $loss)
     {
         $plants = Plant::pluck('name', 'id')->prepend('Seleccione una planta', "");
-        return view('losses.edit', compact('loss'));
+        return view('losses.edit', compact('loss', 'plants'));
     }
 
     /**

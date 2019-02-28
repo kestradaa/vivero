@@ -2,7 +2,7 @@
     $(function () {
 		$('#whithdrawal_date').datetimepicker({
 			locale: "es",
-	        format: "Y-M-D H:m",
+	        format: "Y-M-d H:m",
 	        sideBySide: true
 		});
     });

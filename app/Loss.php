@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Collective\Html\Eloquent\FormAccessible;
 
 class Loss extends Model
 {
+
+    use FormAccessible;
+    
     protected $fillable = [
     	'plant_id', 'quantity'
     ];

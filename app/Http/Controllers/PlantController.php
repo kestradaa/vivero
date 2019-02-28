@@ -50,7 +50,7 @@ class PlantController extends Controller
 
         $plant = Plant::create($request->all());
 
-        $plant->processes()->sync($request->processes);
+        $plant->Process()->sync($request->processes);
 
         return back()->withSuccess(trans('app.success_store'));
     }
