@@ -84,6 +84,16 @@ class User extends Authenticatable
         return "{$this->name} {$this->lastname}";
     }
 
+    public function setNameAttribute($value = '')
+    {
+        $this->attributes['name'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
+
+    public function setLastnameAttribute($value = '')
+    {
+        $this->attributes['lastname'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
+
     /*
     |------------------------------------------------------------------------------------
     | Relationships

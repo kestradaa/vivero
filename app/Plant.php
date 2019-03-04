@@ -9,7 +9,7 @@ use App\Process;
 class Plant extends Model
 {
     protected $fillable = [
-        'name', 'status', 'initial_quantity', 'actual_quantity', 'exit_quantity', 'loss_quantity', 'goal'
+        'name', 'status', 'initial_quantity', 'propagation_quantity','exit_quantity', 'actual_quantity', 'goal'
     ];
 
     protected $dates = [
@@ -21,10 +21,11 @@ class Plant extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'name' => "required|string|max:255|unique:plants,name,$id",
+            'name' => 'required|string|max:255|unique:plants,name,$id',
             'initial_quantity' => 'required|integer',
-            'actual_quantity' => 'required|integer',
+            'propagation_quantity' => 'required|integer',
             'exit_quantity' => 'required|integer',
+            'actual_quantity' => 'required|integer',
             'goal' => 'required|integer',
         ];
 
@@ -38,13 +39,18 @@ class Plant extends Model
 
     }
 
+    public function setNameAttribute($value = '')
+    {
+        $this->attributes['name'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
+
     public function loss()
     {
-        return $this->hasMany(Loss::class);
+        return $this->hasOne(Loss::class);
     }
 
     public function process()
     {
-        return $this->belongsToMany(Process::class)->withTimestamps();;
+        return $this->belongsToMany(Process::class)->withTimestamps();
     }   
 }

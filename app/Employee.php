@@ -35,4 +35,9 @@ class Employee extends Model
             'dpi' => 'required|string|unique:employees,dpi',
         ]);
     }
+
+    public function setNameAttribute($value = '')
+    {
+        $this->attributes['name'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
 }

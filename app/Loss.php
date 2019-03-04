@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Loss;
 use Collective\Html\Eloquent\FormAccessible;
 
 class Loss extends Model

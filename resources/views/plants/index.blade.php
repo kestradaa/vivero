@@ -24,8 +24,9 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Cantidad Inicial</th>
-                    <th>Cantidad Actual</th>
+                    <th>Cantidad Propagado</th>
                     <th>Cantidad Salida</th>
+                    <th>Cantidad Actual</th>
                     <th>Meta del Año</th>
                     <th>Acciones</th>
                 </tr>
@@ -35,8 +36,9 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Cantidad Inicial</th>
-                    <th>Cantidad Actual</th>
+                    <th>Cantidad Propagado</th>
                     <th>Cantidad Salida</th>
+                    <th>Cantidad Actual</th>
                     <th>Meta del Año</th>
                     <th>Acciones</th>
                 </tr>
@@ -54,8 +56,9 @@
             columns: [
                 {data: 'name'},
                 {data: 'initial_quantity'},
-                {data: 'actual_quantity'},
+                {data: 'propagation_quantity'},
                 {data: 'exit_quantity'},
+                {data: 'actual_quantity'},
                 {data: 'goal'},
                 {data: 'actions'}
             ]

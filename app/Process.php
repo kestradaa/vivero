@@ -35,6 +35,11 @@ class Process extends Model
         ]);
     }
 
+    public function setNameAttribute($value = '')
+    {
+        $this->attributes['name'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
+    
     public function plant()
     {
         return $this->belongsToMany(Plant::class);

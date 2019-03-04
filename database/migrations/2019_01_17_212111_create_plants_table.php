@@ -17,8 +17,9 @@ class CreatePlantsTable extends Migration
             $table->increments('id')->unique();
             $table->string('name')->unique();
             $table->integer('initial_quantity');
-            $table->integer('actual_quantity');
+            $table->integer('propagation_quantity');
             $table->integer('exit_quantity');
+            $table->integer('actual_quantity');
             $table->integer('goal');
             $table->timestamps();
         });

@@ -23,8 +23,8 @@ class Withdrawal extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'receipt' => 'required|integer',
-            'withdrawal_date' => 'required|date_format:Y-M-D H:m',
+            'receipt' => 'required|integer|unique:withdrawals,receipt',
+            'withdrawal_date' => 'required|date',
             'withdrawal_person' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'lisence_plate' => 'required|string|max:255',
@@ -38,9 +38,4 @@ class Withdrawal extends Model
             'receipt' => 'required|integer|unique:withdrawals,receipt',
         ]);
     }
-
-    /*public function formDateAttribute($withdrawal_date)
-    {
-        return Carbon::parse($withdrawal_date)->format('Y-m-d H:i');
-    }*/
 }

@@ -4,10 +4,12 @@
 			{!! Form::myInput('text', 'name', 'Nombre de la Planta') !!}
 
 			{!! Form::myInput('number', 'initial_quantity', 'Cantidad Inicial de la Planta') !!}
-
-			{!! Form::myInput('number', 'actual_quantity', 'Cantidad actual de la Planta') !!}
 			
-			{!! Form::myInput('number', 'exit_quantity', 'Cantidad salida de la Planta') !!}
+			{!! Form::myInput('number', 'propagation_quantity', 'Cantidad Propagada de la Planta') !!}
+
+			{!! Form::myInput('number', 'exit_quantity', 'Cantidad Salida de la Planta') !!}
+
+			{!! Form::myInput('number', 'actual_quantity', 'Cantidad Actual de la Planta') !!}
 
 			{!! Form::myInput('number', 'goal', 'Meta Produccion de Planta') !!}
 

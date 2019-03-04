@@ -66,7 +66,7 @@
         </style>
     </head>
     <body>
-        <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style='background-image: url("/images/bg.jpg")'>
+        <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style='background-image: url("/images/fondohome.jpg")'>
       </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
