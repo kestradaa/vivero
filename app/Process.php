@@ -44,32 +44,4 @@ class Process extends Model
     {
         return $this->belongsToMany(Plant::class);
     }
-
-    /*
-    public function assignProcess($processId = null)
-    {
-        $processes = $this->processes;
-
-        if (!$processes->contains($processId)) {
-            return $this->processes()->attach($processId);
-        }
-
-        return false;
-    }
-
-    public function revokeProcess($processId = '')
-    {
-        return $this->processes()->detach($processId);
-    }
-     
-    public function syncProcess(array $processIds = [])
-    {
-        return $this->processes()->sync($processIds);
-    }
-     
-    public function revokeAllProcess()
-    {
-        return $this->processes()->detach();
-    }
-    */
 }

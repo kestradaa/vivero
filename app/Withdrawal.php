@@ -38,4 +38,9 @@ class Withdrawal extends Model
             'receipt' => 'required|integer|unique:withdrawals,receipt',
         ]);
     }
+
+    public function setNameAttribute($value = '')
+    {
+        $this->attributes['withdrawal_person'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
 }

@@ -3,12 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Loss;
 use Collective\Html\Eloquent\FormAccessible;
 
 class Loss extends Model
 {
-
     use FormAccessible;
     
     protected $fillable = [
@@ -24,7 +22,7 @@ class Loss extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'plant_id' => 'required|integer',
+            'plant_id' => 'required|integer|unique:losses,plant_id,$id',
             'quantity' => 'required|integer',
         ];
 
@@ -33,7 +31,7 @@ class Loss extends Model
         }
         
         return array_merge($commun, [
-            'plant_id' => 'required|integer',
+            'plant_id' => 'required|integer|unique:losses,plant_id',
         ]);
     }
 

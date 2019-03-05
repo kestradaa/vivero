@@ -68,6 +68,19 @@ class PlantController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function losses(Plant $plant)
+    {
+        return $plant->losses()->select('id', 'name')->get()
+            ->prepend(['id' => null, 'name' => 'Seleccione una perdida']);
+    }
+
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

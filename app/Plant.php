@@ -36,7 +36,6 @@ class Plant extends Model
         return array_merge($commun, [
             'name' => 'required|string|max:255|unique:plants,name',
         ]);
-
     }
 
     public function setNameAttribute($value = '')
