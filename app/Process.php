@@ -3,15 +3,18 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Collective\Html\Eloquent\FormAccessible;
 
 class Process extends Model
 {
+    
+    use FormAccessible;
+
+    protected $table = 'processes';
 
 	protected $fillable = [
         'name', 'description'
     ];
-
-    protected $table = 'processes';
 
     protected $dates = [
         'created_at',
@@ -22,7 +25,7 @@ class Process extends Model
     public static function rules($update = false, $id = null)
     {
         $commun = [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:processes,name',
             'description' => 'required|string|max:255',
         ];
 

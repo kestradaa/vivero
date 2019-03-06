@@ -7,6 +7,9 @@ use Collective\Html\Eloquent\FormAccessible;
 
 class Withdrawal extends Model
 {
+
+    use FormAccessible;
+
     protected $table = 'withdrawals';
 
     protected $fillable = [

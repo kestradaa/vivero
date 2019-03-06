@@ -10,12 +10,10 @@
 
 			{!! Form::myTextArea('description', 'Descripción') !!}
 
-			{!! Form::myInput('text', 'lisence_plate', 'Placa de vehiculo que retira') !!}
+			{!! Form::myInput('text', 'lisence_plate', 'Placa de vehiculo que retira') !!}	   
 
-			<div class="form-group">		   
-		    	{!! Form::label('file', 'Fotografia del vale') !!}
-		    	{!! Form::file('file') !!}
-		    </div>
+		    {!! Form::myFile('file', 'Fotografia del vale') !!}
+
 		</div>
 	</div>
 </div>

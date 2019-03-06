@@ -52,8 +52,11 @@
 
             .links > a {
                 color: white;
+                border-top: solid;
+                border-bottom: solid;
+                border-width: 2px;
                 padding: 0 25px;
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -63,6 +66,12 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            #title{
+                border-bottom: solid;
+                border-width: 2px;
+            }
+
         </style>
     </head>
     <body>
@@ -81,7 +90,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
+                <div class="title m-b-md" id="title">
                     VIVERO MUNICIPAL
                 </div>
             </div>
