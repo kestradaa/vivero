@@ -37,7 +37,7 @@ class Loss extends Model
 
     public function plant()
     {
-        return $this->belongsTo(Loss::class);
+        return $this->belongsTo(Plant::class);
     }
 }
 

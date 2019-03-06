@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Plant;
-use App\Process;
 
 class PlantController extends Controller
 {
@@ -66,19 +65,6 @@ class PlantController extends Controller
         $processes = Process::all();
         return view('plants.show', compact('plant', 'processes'));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function losses(Plant $plant)
-    {
-        return $plant->losses()->select('id', 'name')->get()
-            ->prepend(['id' => null, 'name' => 'Seleccione una perdida']);
-    }
-
 
     /**
      * Show the form for editing the specified resource.

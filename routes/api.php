@@ -32,7 +32,7 @@ Route::get('roles', function () {
 });
 
 Route::get('plants', function () {
-    return datatables(App\Plant::all())
+    return datatables(App\Plant::latest('updated_at')->get())
     ->addColumn('actions', 'plants.partials.actions')
     ->rawColumns(['actions'])
     ->toJson();
