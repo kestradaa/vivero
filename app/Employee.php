@@ -40,4 +40,14 @@ class Employee extends Model
     {
         $this->attributes['name'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
     }
+
+    public function setLastnameAttribute($value = '')
+    {
+        $this->attributes['last_name'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
+
+    public function setRolAttribute($value = '')
+    {
+        $this->attributes['rol'] = mb_convert_case($value, MB_CASE_TITLE, "UTF-8");
+    }
 }

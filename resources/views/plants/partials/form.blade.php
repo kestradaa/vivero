@@ -17,7 +17,7 @@
 			<div class="form-group">
 				<ul class="list-unstyled">
 					@foreach ($processes as $process)
-							{!! Form::myInput('number', 'processes[]',$process->name,['placeholder' => $process->description]) !!}
+							{!! Form::myInput('number', 'quantity',$process->name,['placeholder' => $process->description]) !!}
 							<hr>
 					@endforeach
 				</ul>

@@ -19,6 +19,7 @@ class CreateProcessPlantTable extends Migration
             $table->foreign('plant_id')->references('id')->on('plants')->onDelete('cascade');
             $table->integer('process_id')->unsigned()->index();
             $table->foreign('process_id')->references('id')->on('processes')->onDelete('cascade');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
