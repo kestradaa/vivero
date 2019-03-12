@@ -51,6 +51,6 @@ class Plant extends Model
     public function process()
     {
         return $this->belongsToMany('\App\Process','process_plant')
-            ->withPivot('plant_id','quantity')->withTimestamps(); 
+            ->withPivot('quantity')->withTimestamps(); 
     }   
 }

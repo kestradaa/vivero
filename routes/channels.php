@@ -14,7 +14,7 @@
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
-
+/*
 Broadcast::channel('App.Plant.{id}', function ($plant, $id) {
     return (int) $plant->id === (int) $id;
 });
@@ -38,3 +38,4 @@ Broadcast::channel('App.Withdrawal.{id}', function ($withdrawal, $id) {
 Broadcast::channel('App.Process.{id}', function ($process, $id) {
     return (int) $process->id === (int) $id;
 });
+*/

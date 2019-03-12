@@ -45,6 +45,6 @@ class Process extends Model
     
     public function plant()
     {
-        return $this->belongsToMany('\App\Plant','process_plant')->withPivot('process_id','quantity');
+        return $this->belongsToMany('\App\Plant','process_plant')->withPivot('quantity');
     }
 }
