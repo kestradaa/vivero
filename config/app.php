@@ -176,6 +176,7 @@ return [
         // Mis providers
         Yajra\DataTables\DataTablesServiceProvider::class,
         Caffeinated\Shinobi\ShinobiServiceProvider::class,
+        gfazioli\Morris\MorrisServiceProvider::class,
     ],
 
     /*
@@ -227,6 +228,7 @@ return [
         
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Shinobi' => Caffeinated\Shinobi\Facades\Shinobi::class,
+        'Morris' => gfazioli\Morris\Facades\Morris::class,
 
     ],
 

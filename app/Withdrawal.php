@@ -13,7 +13,7 @@ class Withdrawal extends Model
     protected $table = 'withdrawals';
 
     protected $fillable = [
-        'receipt', 'whithdrawal_date', 'withdrawal_person', 'description', 'lisence_plate'
+        'receipt', 'whithdrawal_date', 'withdrawal_person', 'description', 'lisence_plate', 'file'
     ];
 
     protected $dates = [
@@ -27,10 +27,11 @@ class Withdrawal extends Model
     {
         $commun = [
             'receipt' => 'required|integer|unique:withdrawals,receipt',
-            'withdrawal_date' => 'required|date',
+            'withdrawal_date' => 'nullable|date',
             'withdrawal_person' => 'required|string|max:255',
             'description' => 'required|string|max:255',
             'lisence_plate' => 'required|string|max:255',
+            'file' => 'mimes:jpg,jpeg,png,gif',
         ];
 
         if ($update) {

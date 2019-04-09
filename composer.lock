@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "166b4bee6a645041f3ef81b9dbcfaa08",
+    "content-hash": "4064316a2407c9b2f467acba3de22771",
     "packages": [
         {
             "name": "caffeinated/shinobi",
@@ -431,6 +431,51 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "gfazioli/laravel-morris-php",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gfazioli/Laravel-Morris-PHP.git",
+                "reference": "af981f80ebe93ed40178ccb9101c097a6ca54e1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gfazioli/Laravel-Morris-PHP/zipball/af981f80ebe93ed40178ccb9101c097a6ca54e1c",
+                "reference": "af981f80ebe93ed40178ccb9101c097a6ca54e1c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.2",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gfazioli\\Morris\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Giovambattista Fazioli",
+                    "email": "giovambattista.fazioli@gmail.com",
+                    "homepage": "http://undolog.com"
+                }
+            ],
+            "description": "Laravel Service Provider for morris.js",
+            "homepage": "https://github.com/gfazioli/laravel-morris-php",
+            "keywords": [
+                "charts",
+                "javascript",
+                "morris",
+                "php"
+            ],
+            "time": "2017-03-06T12:46:57+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
