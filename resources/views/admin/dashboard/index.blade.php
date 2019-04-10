@@ -11,13 +11,30 @@
     <div class="container">
     	<h2>INDICADORES</h2>
     	<hr>
-
+    	<br>
         <div class="row">
         	<div class="col-md-6">
-        		<h4>Grafica de Linea</h4>
+        		<h3>Prueba 1</h3>
+        			<div id="prueba1" style="height: 250px;"></div>
         	</div>
         	<div class="col-md-6">
-        		<h4>Grafica de Area</h4>
+        		<h3>Prueba 2</h3>
+        		<div>
+        			<div id="prueba2" style="height: 250px;"></div>
+        		</div>
+        	</div>
+        </div>
+        <br>
+        <div class="row">
+        	<div class="col-md-6">
+        		<h3>Prueba 3</h3>
+        			<div id="prueba3" style="height: 250px;"></div>
+        	</div>
+        	<div class="col-md-6">
+        		<h3>Prueba 4</h3>
+        		<div>
+        			<div id="prueba4" style="height: 250px;"></div>
+        		</div>
         	</div>
         </div>
     </div>
@@ -29,5 +46,87 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+    <script type="text/javascript">
+    	
+    	Morris.Donut({
+		    element: 'prueba1',
+		    data: [
+		        {value: 5, label: 'foo'},
+		        {value: 15, label: 'bar'},
+		        {value: 10, label: 'baz'},
+		        {value: 70, label: 'A really really long label'}
+		      ],
+		      	formatter: function (x) { return x + "%"}
+		    		}).on('click', function(i, row){
+		    	console.log(i, row);
+		    });
+
+		Morris.Bar({
+			element: 'prueba2',
+			data: [
+			    {x: '2011 Q1', y: 0},
+			    {x: '2011 Q2', y: 1},
+			    {x: '2011 Q3', y: 2},
+			    {x: '2011 Q4', y: 3},
+			    {x: '2012 Q1', y: 4},
+			    {x: '2012 Q2', y: 5},
+			    {x: '2012 Q3', y: 6},
+			    {x: '2012 Q4', y: 7},
+			    {x: '2013 Q1', y: 8}
+			],
+			xkey: 'x',
+			ykeys: ['y'],
+			labels: ['Y'],
+			barColors: function (row, series, type) {
+			    if (type === 'bar') {
+			    	var red = Math.ceil(255 * row.y / this.ymax);
+			    	return 'rgb(' + red + ',0,0)';
+			    }
+			    else {
+			    	return '#000';
+			    	}
+			    }
+			});
+
+		Morris.Area({
+  			element: 'prueba4',
+			data: [
+    			{x: '2010 Q4', y: 3, z: 7},
+    			{x: '2011 Q1', y: 3, z: 4},
+   				{x: '2011 Q2', y: null, z: 1},
+    			{x: '2011 Q3', y: 2, z: 5},
+    			{x: '2011 Q4', y: 8, z: 2},
+    			{x: '2012 Q1', y: 4, z: 4}
+  			],
+  			xkey: 'x',
+  			ykeys: ['y', 'z'],
+  			labels: ['Y', 'Z']
+			}).on('click', function(i, row){
+  				console.log(i, row);
+			});
+
+		var day_data = [
+			{"period": "2012-10-01", "licensed": 3407, "sorned": 660},
+			{"period": "2012-09-30", "licensed": 3351, "sorned": 629},
+			{"period": "2012-09-29", "licensed": 3269, "sorned": 618},
+			{"period": "2012-09-20", "licensed": 3246, "sorned": 661},
+			{"period": "2012-09-19", "licensed": 3257, "sorned": 667},
+			{"period": "2012-09-18", "licensed": 3248, "sorned": 627},
+			{"period": "2012-09-17", "licensed": 3171, "sorned": 660},
+			{"period": "2012-09-16", "licensed": 3171, "sorned": 676},
+			{"period": "2012-09-15", "licensed": 3201, "sorned": 656},
+			{"period": "2012-09-10", "licensed": 3215, "sorned": 622}
+		];
+
+		Morris.Bar({
+			element: 'prueba3',
+			data: day_data,
+			xkey: 'period',
+			ykeys: ['licensed', 'sorned'],
+			labels: ['Licensed', 'SORN'],
+			xLabelAngle: 60
+		});
+    </script>
 
 @endsection
